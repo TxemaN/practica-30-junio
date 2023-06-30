@@ -61,7 +61,7 @@ function esconderFotos(){
     btnOcultar.classList.add("ocultar")
     btnMostrar.classList.remove("ocultar")
 
-    for(let i=0; i<contenedorFotos.clientHeight; i++){
+    for(let i=0; i<arrayFotos.length; i++){
     contenedorFotos.removeChild(contenedorFotos.children[0]);}
 }
 
