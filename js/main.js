@@ -1,9 +1,20 @@
 const contenedorFotos = document.querySelector("#contenedor-fotos");
 const btnMostrar = document.querySelector("#btnMostrar")
 const btnOcultar = document.querySelector("#btnOcultar")
+const padre=document.querySelector('#padre');
 const fragment = document.createDocumentFragment();
 
+document.addEventListener('click',(ev)=>{
 
+	if(ev.target==btnMostrar){
+		return pintarFotos();
+	}
+
+	else if (ev.target==btnOcultar){
+		return esconderFotos();
+	}
+
+})
 
 const arrayFotos = [{
     id:"",
@@ -28,7 +39,7 @@ const arrayFotos = [{
 }
 
 ]
-btnMostrar.addEventListener("click", pintarFotos);
+
 function pintarFotos()  {
     arrayFotos.forEach((item) => {
         const cajaFotos = document.createElement("FIGURE");
@@ -55,7 +66,7 @@ function pintarFotos()  {
     btnOcultar.classList.remove("ocultar")
 }
 
-btnOcultar.addEventListener("click", esconderFotos)
+
 function esconderFotos(){
 
     btnOcultar.classList.add("ocultar")
