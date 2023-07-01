@@ -5,10 +5,10 @@ const bannerBajo = document.querySelector("#bannerBajo img")
 const fragment = document.createDocumentFragment();
 //con este addevent SWITCH llamamos a los botones de mostrar o no//
 document.addEventListener('click', (ev) => {
-    switch (ev.target.id) {
-        case "btnMostrar": return pintarFotos();
+    switch (ev.target) {
+        case btnMostrar: return pintarFotos();
             break;
-        case "btnOcultar": return esconderFotos();
+        case btnOcultar: return esconderFotos();
             break;
     }
     //con este condicional dentro del eventlistener hacemos que todo sobre lo que se haga click con clase fotico cambia la url de la foto de abajo//
