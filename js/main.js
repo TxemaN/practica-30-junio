@@ -10,11 +10,13 @@ switch (ev.target.id) {
     break;
     case "btnOcultar" : return esconderFotos();
     break;
-    case "foto1" : return pintarBajo();
+    case "foto1" : return bannerBajo.src=ev.target.src;
      break;
-     case "foto2" : return pintarBajo();
+     case "foto2" : return bannerBajo.src=ev.target.src;
      break;
-     case "foto3" : return pintarBajo();
+     case "foto3" : return bannerBajo.src=ev.target.src;
+     break;
+     case "foto4" : return bannerBajo.src=ev.target.src;
      break;
 }}
 	)
@@ -39,7 +41,14 @@ const arrayFotos = [{
     alt: "",
     titulo: "MIMIMIMIMI",
     pie: ""
-}
+},
+{
+    id:"foto4",
+    url: "assets/viajes-4.jpg",
+    alt: "",
+    titulo: "MIMIMIMIMI",
+    pie: ""
+},
 
 ]
 
@@ -80,9 +89,3 @@ const esconderFotos = () =>{
 }
 
 
-const pintarBajo =() =>{
-    arrayFotos.forEach((item) => {
-         
-      bannerBajo.src=item.url;} )
-   
-}
