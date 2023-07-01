@@ -1,37 +1,40 @@
 const contenedorFotos = document.querySelector("#contenedor-fotos");
 const btnMostrar = document.querySelector("#btnMostrar")
 const btnOcultar = document.querySelector("#btnOcultar")
-const padre=document.querySelector('#padre');
+const bannerBajo = document.querySelector("#bannerBajo img")
 const fragment = document.createDocumentFragment();
 
 document.addEventListener('click',(ev)=>{
-
-	if(ev.target==btnMostrar){
-		return pintarFotos();
-	}
-
-	else if (ev.target==btnOcultar){
-		return esconderFotos();
-	}
-
-})
+switch (ev.target.id) {
+    case "btnMostrar" : return pintarFotos();
+    break;
+    case "btnOcultar" : return esconderFotos();
+    break;
+    case "foto1" : return pintarBajo();
+     break;
+     case "foto2" : return pintarBajo();
+     break;
+     case "foto3" : return pintarBajo();
+     break;
+}}
+	)
 
 const arrayFotos = [{
-    id:"",
+    id:"foto1",
     url: "assets/viajes-1.jpg",
     alt: "",
     titulo: "MIMIMIMIMI",
     pie: ""
 },
 {
-    id:"",
+    id:"foto2",
     url: "assets/viajes-2.jpg",
     alt: "",
     titulo: "MIMIMIMIMI",
     pie: ""
 },
 {
-    id:"",
+    id:"foto3",
     url: "assets/viajes-3.jpg",
     alt: "",
     titulo: "MIMIMIMIMI",
@@ -40,7 +43,7 @@ const arrayFotos = [{
 
 ]
 
-function pintarFotos()  {
+const pintarFotos =() => {
     arrayFotos.forEach((item) => {
         const cajaFotos = document.createElement("FIGURE");
 
@@ -67,7 +70,7 @@ function pintarFotos()  {
 }
 
 
-function esconderFotos(){
+const esconderFotos = () =>{
 
     btnOcultar.classList.add("ocultar")
     btnMostrar.classList.remove("ocultar")
@@ -76,3 +79,10 @@ function esconderFotos(){
     contenedorFotos.removeChild(contenedorFotos.children[0]);}
 }
 
+
+const pintarBajo =() =>{
+    arrayFotos.forEach((item) => {
+         
+      bannerBajo.src=item.url;} )
+   
+}
