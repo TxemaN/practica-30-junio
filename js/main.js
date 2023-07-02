@@ -6,9 +6,26 @@ const btnMostrar = document.querySelector("#btnMostrar")
 const btnOcultar = document.querySelector("#btnOcultar")
 const bannerBajo = document.querySelector("#bannerBajo img")
 const fragment = document.createDocumentFragment();
+<<<<<<< HEAD
 
 
 // ARRAYS --->>>
+=======
+//con este addevent SWITCH llamamos a los botones de mostrar o no//
+document.addEventListener('click', (ev) => {
+    switch (ev.target) {
+        case btnMostrar: return pintarFotos();
+            break;
+        case btnOcultar: return esconderFotos();
+            break;
+    }
+    //con este condicional dentro del eventlistener hacemos que todo sobre lo que se haga click con clase fotico cambia la url de la foto de abajo//
+    if (ev.target.classList.contains("fotico")) {
+
+        bannerBajo.src = ev.target.src;
+    }
+})
+>>>>>>> c1db1a3ab0834b6881c88a4ea4b0a098cbbe37bc
 
 const arrayFotos = [{
     id: "foto1",
@@ -100,7 +117,10 @@ const esconderFotos = () => {
     btnOcultar.classList.add("ocultar")
     btnMostrar.classList.remove("ocultar")
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> c1db1a3ab0834b6881c88a4ea4b0a098cbbe37bc
     for (let i = 0; i < arrayFotos.length; i++) {
         contenedorFotos.removeChild(contenedorFotos.children[0]);
     }
